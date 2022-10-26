@@ -14,8 +14,9 @@ return [
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/xdebug' => [[['_route' => '_profiler_xdebug', '_controller' => 'web_profiler.controller.profiler::xdebugAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
-        '/health' => [[['_route' => 'app_health', '_controller' => 'App\\Controller\\HealthController::index'], null, null, null, false, false, null]],
+        '/matter' => [[['_route' => 'app_matter', '_controller' => 'App\\Controller\\MatterController::index'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'app_note', '_controller' => 'App\\Controller\\NoteController::index'], null, null, null, false, false, null]],
+        '/school/course' => [[['_route' => 'app_school_course', '_controller' => 'App\\Controller\\SchoolController::course'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -34,6 +35,11 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
+                .'|/([^/]++)(?'
+                    .'|(*:181)'
+                    .'|/create(*:196)'
+                .')'
+                .'|/school(*:212)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -43,8 +49,11 @@ return [
         116 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
-        159 => [
-            [['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null],
+        159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
+        181 => [[['_route' => 'app_note_matter', '_controller' => 'App\\Controller\\NoteController::show'], ['slug'], null, null, false, true, null]],
+        196 => [[['_route' => 'app_note_matter_create', '_controller' => 'App\\Controller\\NoteController::create'], ['slug'], null, null, false, false, null]],
+        212 => [
+            [['_route' => 'app_school', '_controller' => 'App\\Controller\\SchoolController::index'], [], null, null, false, false, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

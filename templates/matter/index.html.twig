@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello SchoolController!
+{% endblock %}
+
+{% block body %}
+
+	{% include "header/header.html.twig" %}
+	<div>
+		<h1 class="title_page_card">{{matter.name}}</h1>
+
+		<button type="button" class="addCard">
+			<a href="#demo">AJOUTER</a>
+		</button>
+	</div>
+
+
+	<div class="container">
+
+
+		<div class="cards">
+			{% for card in cards %}
+				<div class="card">
+					<h2 class="card-title">{{matter.name}}</h2>
+					<h1>{{card.question}}</h1>
+					<p class="card-desc">{{card.answer}}</p>
+				</div>
+			{% endfor %}
+			<div class="card">
+				<h2 class="card-title">Seal</h2>
+				<h1>Quels sont les attendus de fin de cycle 2 pendant la seconde guerre mondiale ?</h1>
+				<p class="card-desc">Pinnipeds, commonly known as seals,[a] are a widely distributed and diverse clade of carnivorous, fin-footed, semiaquatic marine mammals. They comprise the extant families Odobenidae (whose only living member is the walrus), Otariidae (the eared seals: sea lions and fur seals), and Phocidae (the earless seals, or true seals).</p>
+			</div>
+			<div class="card">
+				<h2 class="card-title">Seal</h2>
+				<h1>Quels sont les attendus de fin de cycle 2 pendant la seconde guerre mondiale ?</h1>
+				<p class="card-desc">Pinnipeds, commonly known as seals,[a] are a widely distributed and diverse clade of carnivorous, fin-footed, semiaquatic marine mammals. They comprise the extant families Odobenidae (whose only living member is the walrus), Otariidae (the eared seals: sea lions and fur seals), and Phocidae (the earless seals, or true seals).</p>
+			</div>
+			<div class="card">
+				<h2 class="card-title">Seal</h2>
+				<h1>Quels sont les attendus de fin de cycle 2 pendant la seconde guerre mondiale ?</h1>
+				<p class="card-desc">Pinnipeds, commonly known as seals,[a] are a widely distributed and diverse clade of carnivorous, fin-footed, semiaquatic marine mammals. They comprise the extant families Odobenidae (whose only living member is the walrus), Otariidae (the eared seals: sea lions and fur seals), and Phocidae (the earless seals, or true seals).</p>
+			</div>
+			<div class="card">
+				<h2 class="card-title">Lion</h2>
+				<img src="https://images.unsplash.com/photo-1534188753412-3e26d0d618d6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" alt="">
+				<p class="card-desc">The lion (Panthera leo) is a species in the family Felidae and a member of the genus Panthera. It has a muscular, deep-chested body, short, rounded head, round ears, and a hairy tuft at the end of its tail. It is sexually dimorphic; adult male lions have a prominent mane.</p>
+			</div>
+			<div class="card">
+				<h2 class="card-title">Seal</h2>
+				<h1>Quels sont les attendus de fin de cycle 2 pendant la seconde guerre mondiale ?</h1>
+				<p class="card-desc">Pinnipeds, commonly known as seals,[a] are a widely distributed and diverse clade of carnivorous, fin-footed, semiaquatic marine mammals. They comprise the extant families Odobenidae (whose only living member is the walrus), Otariidae (the eared seals: sea lions and fur seals), and Phocidae (the earless seals, or true seals).</p>
+			</div>
+
+
+		</div>
+
+	</div>
+
+	<div id="demo" class="modal">
+		<div class="modal_content">
+			<h1>Hello</h1>
+
+			<p>Bienvenue sur la fenêtre modale !</p>
+			{{form(form)}}
+
+
+				<a href="" class="modal_close">&times;</a>
+			</div>
+		</div>
+	</div>
+{% endblock %}

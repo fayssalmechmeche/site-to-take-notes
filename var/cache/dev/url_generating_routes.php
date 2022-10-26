@@ -16,6 +16,10 @@ return [
     '_profiler_router' => [['token'], ['_controller' => 'web_profiler.controller.router::panelAction'], [], [['text', '/router'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
-    'app_health' => [[], ['_controller' => 'App\\Controller\\HealthController::index'], [], [['text', '/health']], [], [], []],
+    'app_matter' => [[], ['_controller' => 'App\\Controller\\MatterController::index'], [], [['text', '/matter']], [], [], []],
     'app_note' => [[], ['_controller' => 'App\\Controller\\NoteController::index'], [], [['text', '/']], [], [], []],
+    'app_note_matter' => [['slug'], ['_controller' => 'App\\Controller\\NoteController::show'], [], [['variable', '/', '[^/]++', 'slug', true]], [], [], []],
+    'app_note_matter_create' => [['slug'], ['_controller' => 'App\\Controller\\NoteController::create'], [], [['text', '/create'], ['variable', '/', '[^/]++', 'slug', true]], [], [], []],
+    'app_school' => [[], ['_controller' => 'App\\Controller\\SchoolController::index'], [], [['text', '/school']], [], [], []],
+    'app_school_course' => [[], ['_controller' => 'App\\Controller\\SchoolController::course'], [], [['text', '/school/course']], [], [], []],
 ];

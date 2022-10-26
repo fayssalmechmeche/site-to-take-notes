@@ -6,11 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class HealthController extends AbstractController
+class MatterController extends AbstractController
 {
-    #[Route('/health', name: 'app_health')]
+    #[Route('/matter', name: 'app_matter')]
     public function index(): Response
     {
-        return $this->render('health/index.html.twig');
+        return $this->render('matter/index.html.twig', [
+            'controller_name' => 'MatterController',
+        ]);
     }
 }

@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+	<header>
+
+		<div class="logo">
+			<a href="{{ path('app_note') }}">
+				<img src="{{"../assets/img/FaySchool.svg"}}" alt="" class="logo">
+			</a>
+		</div>
+		<ul id="main-menu">
+			<li class="item">
+				<a href="{{path('app_note_matter',{slug:matter.slug})}}">Mes notes</a>
+			</li>
+			<li class="item">
+				<a href="{{path('app_note_matter_create',{slug:matter.slug})}}">
+					Gestion des notes
+				</a>
+			</li>
+			<li class="item">Quizz</li>
+		</ul>
+
+		<div class="login">Login</div>
+	</header>
+
+
+{% endblock %}

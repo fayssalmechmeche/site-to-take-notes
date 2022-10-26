@@ -58,19 +58,22 @@ class __TwigTemplate_6bc9a9867b96688b2dc37173756fa065 extends Template
         // line 12
         echo "
 
+\t\t<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css\" integrity=\"sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"/>
+\t\t<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
 \t\t<link rel=\"stylesheet\" href=\"";
-        // line 14
-        echo "assets/css/style.css";
+        // line 16
+        echo "../assets/css/style.css";
         echo "\">
-
-
 \t</head>
 \t<body>
 \t\t";
         // line 19
         $this->displayBlock('body', $context, $blocks);
         // line 20
-        echo "\t</body>
+        echo "\t\t<script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>
+\t\t<script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js\" integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\" crossorigin=\"anonymous\"></script>
+\t\t<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script>
+\t</body>
 </html>
 ";
         
@@ -131,7 +134,7 @@ class __TwigTemplate_6bc9a9867b96688b2dc37173756fa065 extends Template
 
     public function getDebugInfo()
     {
-        return array (  105 => 19,  85 => 6,  73 => 20,  71 => 19,  63 => 14,  59 => 12,  54 => 8,  52 => 6,  45 => 1,);
+        return array (  108 => 19,  88 => 6,  73 => 20,  71 => 19,  65 => 16,  59 => 12,  54 => 8,  52 => 6,  45 => 1,);
     }
 
     public function getSourceContext()
@@ -149,12 +152,15 @@ class __TwigTemplate_6bc9a9867b96688b2dc37173756fa065 extends Template
 \t\t{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
 
 
-\t\t<link rel=\"stylesheet\" href=\"{{\"assets/css/style.css\"}}\">
-
-
+\t\t<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css\" integrity=\"sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"/>
+\t\t<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
+\t\t<link rel=\"stylesheet\" href=\"{{\"../assets/css/style.css\"}}\">
 \t</head>
 \t<body>
 \t\t{% block body %}{% endblock %}
+\t\t<script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>
+\t\t<script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js\" integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\" crossorigin=\"anonymous\"></script>
+\t\t<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script>
 \t</body>
 </html>
 ", "base.html.twig", "/Users/fayssal/Documents/site-to-take-notes/templates/base.html.twig");

@@ -10,19 +10,92 @@
 	<div id="container">
 		<div class="subject">
 			<br>
-			<h1>Quel matiere ?</h1>
+			<h1>Quelle matière ?</h1>
 		</div>
 
 		<div class="second-container">
+
+			{% for matter in matters %}
+				<span class="img">
+					<a href="{{path('app_note_matter',{slug:matter.slug})}}">
+						<button type="button" class="btn">
+							<img src="assets/img/{{matter.image}}" width="120px" class="picture">
+							<div class="text">{{matter.name}}</div>
+						</button>
+					</a>
+				</span>
+
+			{% endfor %}
 			<span class="img">
-				<img src="https://png.pngtree.com/png-vector/20190328/ourlarge/pngtree-vector-health-icon-c-png-image_872167.jpg" width="120px" class="picture">
-				<a href="" class="text">Santé</a>
-			</span>
-			<span class="img">
-				<img src="https://static.vecteezy.com/system/resources/previews/002/206/174/original/school-building-icon-free-vector.jpg" width="120px" class="picture">
-				<a href="" class="text">Professeur</a>
+				<a href="#demo2">
+					<button type="button" class="btn">
+						<i class="fa-solid fa-circle-plus"></i>
+						<div class="text">AJOUTER</div>
+					</button>
+				</a>
 			</span>
 
+
 		</div>
+
+		<div class="rows">
+
+			<a href="#demo">Gérer mes matieres</a>
+
+			<div id="demo" class="modal">
+				<div class="modal_content">
+
+
+					<p>Gérer mes matieres</p>
+					<ul>
+
+
+						{% for matter in matters %}
+							<li>
+								<img src="assets/img/{{matter.image}}" width="80px" alt="">
+								{{matter.name}}
+								<button class="button_modal_edit">
+									<a href="#demo3">EDIT</a>
+								</button>
+								<button class="button_modal_remove">REMOVE</button>
+							</li>
+						{% endfor %}
+
+					</ul>
+
+					<a href="" class="modal_close">&times;</a>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- Modal -->
+
+		<div id="demo2" class="modal">
+			<div class="modal_content">
+				<h1>Hello</h1>
+
+				<p>Bienvenue sur la fenêtre modale !</p>
+				{{form(form)}}
+
+
+					<a href="" class="modal_close">&times;</a>
+				</div>
+			</div>
+
+
+		</div>
+		<div id="demo3" class="modal">
+			<div class="modal_content">
+				<h1>Hello</h1>
+
+				<p>Bienvenue sur la fenêtre modale !</p>
+
+
+				<a href="#demo" class="modal_close">&times;</a>
+			</div>
+		</div>
+
+
 	</div>
 {% endblock %}
