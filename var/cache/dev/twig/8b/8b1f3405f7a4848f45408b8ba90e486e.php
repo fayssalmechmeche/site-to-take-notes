@@ -28,8 +28,6 @@ class __TwigTemplate_6bc9a9867b96688b2dc37173756fa065 extends Template
 
         $this->blocks = [
             'title' => [$this, 'block_title'],
-            'stylesheets' => [$this, 'block_stylesheets'],
-            'javascripts' => [$this, 'block_javascripts'],
             'body' => [$this, 'block_body'],
         ];
     }
@@ -46,30 +44,33 @@ class __TwigTemplate_6bc9a9867b96688b2dc37173756fa065 extends Template
         // line 1
         echo "<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset=\"UTF-8\">
-        <title>";
-        // line 5
+\t<head>
+\t\t<meta charset=\"UTF-8\">
+\t\t<title>
+\t\t\t";
+        // line 6
         $this->displayBlock('title', $context, $blocks);
-        echo "</title>
-        <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
-        ";
         // line 8
-        echo "        ";
-        $this->displayBlock('stylesheets', $context, $blocks);
-        // line 11
-        echo "
-        ";
+        echo "\t\t</title>
+\t\t<link
+\t\trel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
+\t\t";
         // line 12
-        $this->displayBlock('javascripts', $context, $blocks);
-        // line 15
-        echo "    </head>
-    <body>
-        ";
-        // line 17
+        echo "
+
+\t\t<link rel=\"stylesheet\" href=\"";
+        // line 14
+        echo "assets/css/style.css";
+        echo "\">
+
+
+\t</head>
+\t<body>
+\t\t";
+        // line 19
         $this->displayBlock('body', $context, $blocks);
-        // line 18
-        echo "    </body>
+        // line 20
+        echo "\t</body>
 </html>
 ";
         
@@ -80,7 +81,7 @@ class __TwigTemplate_6bc9a9867b96688b2dc37173756fa065 extends Template
 
     }
 
-    // line 5
+    // line 6
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -90,7 +91,8 @@ class __TwigTemplate_6bc9a9867b96688b2dc37173756fa065 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Welcome!";
+        echo "Welcome!
+\t\t\t";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -99,53 +101,7 @@ class __TwigTemplate_6bc9a9867b96688b2dc37173756fa065 extends Template
 
     }
 
-    // line 8
-    public function block_stylesheets($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
-
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
-
-        // line 9
-        echo "            ";
-        echo twig_escape_filter($this->env, $this->env->getFunction('encore_entry_link_tags')->getCallable()("app"), "html", null, true);
-        echo "
-        ";
-        
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
-
-        
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
-
-    }
-
-    // line 12
-    public function block_javascripts($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
-
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
-
-        // line 13
-        echo "            ";
-        echo twig_escape_filter($this->env, $this->env->getFunction('encore_entry_script_tags')->getCallable()("app"), "html", null, true);
-        echo "
-        ";
-        
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
-
-        
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
-
-    }
-
-    // line 17
+    // line 19
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -168,32 +124,39 @@ class __TwigTemplate_6bc9a9867b96688b2dc37173756fa065 extends Template
         return "base.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  149 => 17,  136 => 13,  126 => 12,  113 => 9,  103 => 8,  84 => 5,  72 => 18,  70 => 17,  66 => 15,  64 => 12,  61 => 11,  58 => 8,  53 => 5,  47 => 1,);
+        return array (  105 => 19,  85 => 6,  73 => 20,  71 => 19,  63 => 14,  59 => 12,  54 => 8,  52 => 6,  45 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset=\"UTF-8\">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
+\t<head>
+\t\t<meta charset=\"UTF-8\">
+\t\t<title>
+\t\t\t{% block title %}Welcome!
+\t\t\t{% endblock %}
+\t\t</title>
+\t\t<link
+\t\trel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
+\t\t{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+
+\t\t<link rel=\"stylesheet\" href=\"{{\"assets/css/style.css\"}}\">
+
+
+\t</head>
+\t<body>
+\t\t{% block body %}{% endblock %}
+\t</body>
 </html>
-", "base.html.twig", "/Users/fayssal/Documents/site-to-take-notes/my_project_directory/templates/base.html.twig");
+", "base.html.twig", "/Users/fayssal/Documents/site-to-take-notes/templates/base.html.twig");
     }
 }
