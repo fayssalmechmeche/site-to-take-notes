@@ -645,6 +645,6 @@ class __TwigTemplate_3c016c6a5673d1f6436c0063acad8fd8 extends Template
         </div>
     {% endfor %}
 {% endblock %}
-", "@WebProfiler/Collector/notifier.html.twig", "/Users/fayssal/Documents/site-to-take-notes/my_project_directory/vendor/symfony/web-profiler-bundle/Resources/views/Collector/notifier.html.twig");
+", "@WebProfiler/Collector/notifier.html.twig", "/Users/fayssal/Documents/site-to-take-notes/vendor/symfony/web-profiler-bundle/Resources/views/Collector/notifier.html.twig");
     }
 }

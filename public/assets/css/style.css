@@ -95,6 +95,7 @@ header .login {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
 
 }
 
@@ -279,3 +280,13 @@ h1 {
 /* test */
 
 
+.container .login a{
+  width: 200px;
+    height: 40px;
+    background: red;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

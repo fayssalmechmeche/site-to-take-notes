@@ -171,6 +171,6 @@ class __TwigTemplate_c86e74c60bf65d0700c313458e191962 extends Template
         {%- endfor -%}
     </pre>
 {% endif %}
-", "@Doctrine/Collector/explain.html.twig", "/Users/fayssal/Documents/site-to-take-notes/my_project_directory/vendor/doctrine/doctrine-bundle/Resources/views/Collector/explain.html.twig");
+", "@Doctrine/Collector/explain.html.twig", "/Users/fayssal/Documents/site-to-take-notes/vendor/doctrine/doctrine-bundle/Resources/views/Collector/explain.html.twig");
     }
 }

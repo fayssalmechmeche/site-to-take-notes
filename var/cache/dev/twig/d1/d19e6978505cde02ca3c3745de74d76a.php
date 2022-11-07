@@ -642,6 +642,6 @@ class __TwigTemplate_f6792976e40de0457a05fd7f63b56ac5 extends Template
         }());
     </script>
 {% endblock %}
-", "@WebProfiler/Profiler/layout.html.twig", "/Users/fayssal/Documents/site-to-take-notes/my_project_directory/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/layout.html.twig");
+", "@WebProfiler/Profiler/layout.html.twig", "/Users/fayssal/Documents/site-to-take-notes/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/layout.html.twig");
     }
 }

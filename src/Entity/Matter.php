@@ -27,6 +27,9 @@ class Matter
     #[ORM\OneToMany(mappedBy: 'matter', targetEntity: Card::class)]
     private Collection $cards;
 
+    #[ORM\ManyToOne(inversedBy: 'matters')]
+    private ?User $user = null;
+
     public function __construct()
     {
         $this->cards = new ArrayCollection();
@@ -104,6 +107,18 @@ class Matter
                 $card->setMatter(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }

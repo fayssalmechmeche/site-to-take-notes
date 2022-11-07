@@ -23,8 +23,25 @@ class NoteController extends AbstractController
         $this->entityManager = $entityManager;
     }
 
-    #[Route('/', name: 'app_note')]
-    public function index(Request $request, ManagerRegistry $doctrine, SluggerInterface $slugger): Response
+    #[Route('/', name: 'app_index')]
+    public function index(Request $request): Response
+    {
+        $matters = $this->entityManager->getRepository(Matter::class)->findAll();
+        $matter = new Matter();
+        $form = $this->createForm(MatterType::class, $matter);
+        $form = $form->handleRequest($request);
+        return $this->renderForm(
+            'registration/index.html.twig',
+            [
+                'form' => $form,
+                'matters' => $matters,
+
+            ]
+        );
+    }
+
+    #[Route('/matiere', name: 'app_note')]
+    public function matter(Request $request, ManagerRegistry $doctrine, SluggerInterface $slugger): Response
     {
         $matters = $this->entityManager->getRepository(Matter::class)->findAll();
         $matter = new Matter();

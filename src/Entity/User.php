@@ -3,49 +3,93 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
-class User
+#[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
+
+class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $user = null;
+    #[ORM\Column(length: 180, unique: true)]
+    private ?string $email = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column]
+    private array $roles = [];
+
+    /**
+     * @var string The hashed password
+     */
+    #[ORM\Column]
     private ?string $password = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $mail = null;
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Matter::class)]
+    private Collection $matters;
 
-    #[ORM\Column]
-    private ?\DateTimeImmutable $created_at = null;
-
-    #[ORM\Column]
-    private ?\DateTimeImmutable $updated_at = null;
+    public function __construct()
+    {
+        $this->matters = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getUser(): ?string
+    public function getEmail(): ?string
     {
-        return $this->user;
+        return $this->email;
     }
 
-    public function setUser(string $user): self
+    public function setEmail(string $email): self
     {
-        $this->user = $user;
+        $this->email = $email;
 
         return $this;
     }
 
-    public function getPassword(): ?string
+    /**
+     * A visual identifier that represents this user.
+     *
+     * @see UserInterface
+     */
+    public function getUserIdentifier(): string
+    {
+        return (string) $this->email;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getRoles(): array
+    {
+        $roles = $this->roles;
+        // guarantee every user at least has ROLE_USER
+        $roles[] = 'ROLE_USER';
+
+        return array_unique($roles);
+    }
+
+    public function setRoles(array $roles): self
+    {
+        $this->roles = $roles;
+
+        return $this;
+    }
+
+    /**
+     * @see PasswordAuthenticatedUserInterface
+     */
+    public function getPassword(): string
     {
         return $this->password;
     }
@@ -57,38 +101,41 @@ class User
         return $this;
     }
 
-    public function getMail(): ?string
+    /**
+     * @see UserInterface
+     */
+    public function eraseCredentials()
     {
-        return $this->mail;
+        // If you store any temporary, sensitive data on the user, clear it here
+        // $this->plainPassword = null;
     }
 
-    public function setMail(string $mail): self
+    /**
+     * @return Collection<int, Matter>
+     */
+    public function getMatters(): Collection
     {
-        $this->mail = $mail;
+        return $this->matters;
+    }
+
+    public function addMatter(Matter $matter): self
+    {
+        if (!$this->matters->contains($matter)) {
+            $this->matters->add($matter);
+            $matter->setUser($this);
+        }
 
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTimeImmutable
+    public function removeMatter(Matter $matter): self
     {
-        return $this->created_at;
-    }
-
-    public function setCreatedAt(\DateTimeImmutable $created_at): self
-    {
-        $this->created_at = $created_at;
-
-        return $this;
-    }
-
-    public function getUpdatedAt(): ?\DateTimeImmutable
-    {
-        return $this->updated_at;
-    }
-
-    public function setUpdatedAt(\DateTimeImmutable $updated_at): self
-    {
-        $this->updated_at = $updated_at;
+        if ($this->matters->removeElement($matter)) {
+            // set the owning side to null (unless already changed)
+            if ($matter->getUser() === $this) {
+                $matter->setUser(null);
+            }
+        }
 
         return $this;
     }

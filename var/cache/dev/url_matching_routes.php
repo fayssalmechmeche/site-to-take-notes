@@ -14,9 +14,8 @@ return [
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/xdebug' => [[['_route' => '_profiler_xdebug', '_controller' => 'web_profiler.controller.profiler::xdebugAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
-        '/matter' => [[['_route' => 'app_matter', '_controller' => 'App\\Controller\\MatterController::index'], null, null, null, false, false, null]],
-        '/' => [[['_route' => 'app_note', '_controller' => 'App\\Controller\\NoteController::index'], null, null, null, false, false, null]],
-        '/school/course' => [[['_route' => 'app_school_course', '_controller' => 'App\\Controller\\SchoolController::course'], null, null, null, false, false, null]],
+        '/' => [[['_route' => 'app_index', '_controller' => 'App\\Controller\\NoteController::index'], null, null, null, false, false, null]],
+        '/matiere' => [[['_route' => 'app_note', '_controller' => 'App\\Controller\\NoteController::matter'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -39,7 +38,11 @@ return [
                     .'|(*:181)'
                     .'|/create(*:196)'
                 .')'
-                .'|/school(*:212)'
+                .'|/register(*:214)'
+                .'|/log(?'
+                    .'|in(*:231)'
+                    .'|out(*:242)'
+                .')'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -52,8 +55,10 @@ return [
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
         181 => [[['_route' => 'app_note_matter', '_controller' => 'App\\Controller\\NoteController::show'], ['slug'], null, null, false, true, null]],
         196 => [[['_route' => 'app_note_matter_create', '_controller' => 'App\\Controller\\NoteController::create'], ['slug'], null, null, false, false, null]],
-        212 => [
-            [['_route' => 'app_school', '_controller' => 'App\\Controller\\SchoolController::index'], [], null, null, false, false, null],
+        214 => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], [], null, null, false, false, null]],
+        231 => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], [], null, null, false, false, null]],
+        242 => [
+            [['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], [], null, null, false, false, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

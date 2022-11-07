@@ -1671,6 +1671,6 @@ class __TwigTemplate_7506e83eab0af3354c046541a85e33ae extends Template
         </tbody>
     </table>
 {% endmacro %}
-", "@Doctrine/Collector/db.html.twig", "/Users/fayssal/Documents/site-to-take-notes/my_project_directory/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig");
+", "@Doctrine/Collector/db.html.twig", "/Users/fayssal/Documents/site-to-take-notes/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig");
     }
 }

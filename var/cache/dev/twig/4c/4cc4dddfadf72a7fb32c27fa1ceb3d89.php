@@ -2406,6 +2406,6 @@ $context["attrvalue"] === false)) {
         {%- endif -%}
     {%- endfor -%}
 {%- endblock attributes -%}
-", "form_div_layout.html.twig", "/Users/fayssal/Documents/site-to-take-notes/my_project_directory/vendor/symfony/twig-bridge/Resources/views/Form/form_div_layout.html.twig");
+", "form_div_layout.html.twig", "/Users/fayssal/Documents/site-to-take-notes/vendor/symfony/twig-bridge/Resources/views/Form/form_div_layout.html.twig");
     }
 }
